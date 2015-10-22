@@ -1,3 +1,10 @@
+function preLoadUsernameSecretIfExists() {
+    var $=window.jQuery;
+    $.getJSON( "sensitive.json", function( data ) {
+        $("#username").val(data["username"]);
+        $("#secret").val(data["secret"]);
+    });
+}
 function doMagicWSECall() {
     "use strict";
     var $ = window.jQuery;

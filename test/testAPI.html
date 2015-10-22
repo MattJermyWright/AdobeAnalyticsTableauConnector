@@ -9,7 +9,7 @@
     <script src="wsebasic.js"></script>
     <script src="apiTest.js"></script>
 </head>
-<body>
+<body onload="preLoadUsernameSecretIfExists();">
 <p>Test API</p>
 <p>
 <div>Web Services Username:</div><input type="text" size="30" id="username"/>
@@ -29,8 +29,8 @@
     <option value="Report.QueueOvertime">Overtime</option>
 </select>
 </p>
-
-<button onmousedown="javascript:doMagicWSECall()">Submit Adobe Request</button>
+<hr>
+<button onmousedown="doMagicWSECall()">Submit Adobe Request</button>
 <p><div>Results:</div></p>
 <p><textarea style="width: 400px; height: 300px;" id="results"></textarea></p>
 </body>
