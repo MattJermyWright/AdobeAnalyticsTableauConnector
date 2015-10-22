@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test API</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="base64.js"></script>
+    <script src="sha1.js"></script>
+    <script src="wsebasic.js"></script>
+    <script src="apiTest.js"></script>
+</head>
+<body>
+<p>Test API</p>
+<p>
+<div>Web Services Username:</div><input type="text" size="30" id="username"/>
+</p>
+<p>
+<div>Web Services Secret:</div><input type="password" size ="30" id="secret"/>
+</p>
+<p>
+<div>API Method:</div><input type="text" id="method" size="30" value="Company.GetVersionAccess"/>
+</p>
+<hr>
+<p>
+<div>Report Type:</div>
+<select id="reportType">
+    <option value="Report.QueueRanked" selected>Ranked</option>
+    <option value="Report.QueueTrended">Trended</option>
+    <option value="Report.QueueOvertime">Overtime</option>
+</select>
+</p>
+
+<button onmousedown="javascript:doMagicWSECall()">Name Here</button>
+<p><div>Results:</div></p>
+<p><textarea style="width: 400px; height: 300px;" id="results"></textarea></p>
+</body>
+</html>
