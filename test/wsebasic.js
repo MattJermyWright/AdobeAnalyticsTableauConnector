@@ -1,14 +1,6 @@
-var restRequestBuilder=function(username, secret) {
+var restRequestBuilder = function (username, secret) {
     "use strict";
     var standardPostURL = "https://api5.omniture.com/admin/1.4/rest/?method=***METHOD***";
-    //var standardRequestHeader = '<wsse:Security wsse:mustUnderstand=\"1\" xmlns:wsse=\"http://www.omniture.com\">\n' +
-    //    '\t<wsse:UsernameToken wsse:Id=\"User\">\n' +
-    //    '\t\t<wsse:Username>***USERNAME***</wsse:Username>\n' +
-    //    '\t\t\t<wsse:Password Type=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest\">***DIGEST***</wsse:Password>\n' +
-    //    '\t\t<wsse:Nonce>***NONCE***</wsse:Nonce>\n' +
-    //    '\t\t<wsse:Created>***CREATED***</wsse:Created>\n' +
-    //    '\t</wsse:UsernameToken>\n' +
-    //    '</wsse:Security>\n';
     var skinnyRequestHeader = 'UsernameToken Username="***USERNAME***", PasswordDigest="***DIGEST***", Nonce="***NONCE***", Created="***CREATED***"'
 
     function generateNonce() {
@@ -66,6 +58,7 @@ var restRequestBuilder=function(username, secret) {
     function generatePostURL() {
         return standardPostURL.replace("***METHOD***", this.method);
     }
+
     function setMethod(method) {
         this.method = method;
     }

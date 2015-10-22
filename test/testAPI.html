@@ -8,9 +8,11 @@
     <script src="sha1.js"></script>
     <script src="wsebasic.js"></script>
     <script src="apiTest.js"></script>
+    <script src="lodash.custom.min.js"></script>
+    <script src="https://public.tableau.com/javascripts/api/tableauwdc-1.1.0.js"></script>
 </head>
 <body onload="preLoadUsernameSecretIfExists();">
-<p>Test API</p>
+<h2>Test Adobe Analytics Web Connector</h2>
 <p>
 <div>Web Services Username:</div><input type="text" size="30" id="username"/>
 </p>
@@ -18,16 +20,27 @@
 <div>Web Services Secret:</div><input type="password" size ="30" id="secret"/>
 </p>
 <p>
-<div>API Method:</div><input type="text" id="method" size="30" value="Company.GetVersionAccess"/>
+<div>API Method Override:</div><input type="text" id="method" size="30" value="Report.Queue"/>
 </p>
 <hr>
-<p>
+<!-- <p>
 <div>Report Type:</div>
 <select id="reportType">
     <option value="Report.QueueRanked" selected>Ranked</option>
     <option value="Report.QueueTrended">Trended</option>
     <option value="Report.QueueOvertime">Overtime</option>
 </select>
+</p> -->
+<p>
+<div>Report Suite ID:</div><input size ="30" id="rsid"/><br/>
+<div>Date of Report:</div><input size ="30" id="report_date"/><br/>
+<div>Date Range Start / From:</div><input size ="30" id="report_dateFrom"/><br/>
+<div>Date Range End / To:</div><input size ="30" id="report_dateTo"/><br/>
+<div>Date Granularity:</div><input size ="30" id="report_dateGranularity" value="hour"/><br/>
+<div>Metrics:</div><input size ="30" id="report_metricsList" value="pageviews"/><br/>
+<div>Dimensions:</div><input size ="30" id="report_dimensionsList" value="page"/><br/>
+<div>Top Elements to Select:</div><input size ="20" id="report_top" value="10"/><br/>
+
 </p>
 <hr>
 <button onmousedown="doMagicWSECall()">Submit Adobe Request</button>
